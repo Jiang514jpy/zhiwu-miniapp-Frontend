@@ -1,0 +1,46 @@
+<!--pages/register/register.wxml-->
+<view class="register-container">
+  <!-- 装饰曲线 -->
+  <view class="decor-curve"></view>
+  
+  <!-- 标题区域 -->
+  <view class="register-title">
+    <text class="title-cn">注册</text>
+    <text class="title-en">Sign up</text>
+  </view>
+
+  <!-- 表单区域 -->
+  <view class="register-form">
+    <view class="form-item">
+      <input class="form-input" placeholder="手机号" bindinput="onPhoneInput" />
+    </view>
+    <view class="form-item">
+      <input class="form-input" placeholder="新密码" password="{{true}}" bindinput="onPwdInput" />
+    </view>
+    <view class="form-item">
+      <input class="form-input" placeholder="再次输入密码" password="{{true}}" bindinput="onConfirmPwdInput" />
+    </view>
+  </view>
+
+  <!-- 按钮区域 -->
+  <view class="register-buttons">
+    <button class="btn-register" bindtap="handleRegister">注册</button>
+    <button class="btn-login" bindtap="goToLogin">登录</button>
+  </view>
+
+  <!-- 验证码注册入口 -->
+  <view class="sms-register" bindtap="goToSmsRegister">
+    <text>手机验证码注册 ></text>
+  </view>
+
+  <!-- 底部Logo（纯CSS实现花盆+文字） -->
+  <view class="register-footer">
+    <view class="logo">
+      <view class="logo-pot">
+        <view class="pot-body"></view>
+        <view class="pot-leaf"></view>
+      </view>
+      <text class="logo-text">植悟</text>
+    </view>
+  </view>
+</view>

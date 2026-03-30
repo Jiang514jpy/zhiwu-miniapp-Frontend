@@ -1,0 +1,349 @@
+/* pages/user/user.wxss */
+
+/* 主容器 */
+.user-container {
+  min-height: 100vh;
+  background-color: #f5f0e8;
+  padding-bottom: calc(140rpx + env(safe-area-inset-bottom));
+  box-sizing: border-box;
+}
+
+/* 顶部标题区域 */
+.header-section {
+  padding: 20rpx 30rpx 10rpx;
+}
+
+.title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.title-wrapper {
+  position: relative;
+}
+
+.title-cn {
+  font-size: 52rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.title-en {
+  font-size: 28rpx;
+  color: #7a9a6a;
+  font-style: italic;
+  margin-left: 12rpx;
+}
+
+.title-underline {
+  width: 70rpx;
+  height: 6rpx;
+  background-color: #7a9a6a;
+  border-radius: 3rpx;
+  margin-top: 10rpx;
+}
+
+/* 右上角盆栽装饰 */
+.header-plants {
+  height: 90rpx;
+  margin-top: -10rpx;
+}
+
+/* 用户信息卡片 */
+.user-card {
+  margin: 20rpx 30rpx;
+  height: 160rpx;
+  border-radius: 24rpx;
+  background: linear-gradient(135deg, #c5d9a4 0%, #e2d9a2 50%, #f0d8a8 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.user-card-content {
+  display: flex;
+  align-items: center;
+  padding: 24rpx 30rpx;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.avatar-wrapper {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.user-info {
+  margin-left: 24rpx;
+  flex: 1;
+}
+
+.username {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+  display: block;
+}
+
+.user-id {
+  font-size: 24rpx;
+  color: #666;
+  margin-top: 6rpx;
+  display: block;
+}
+
+.card-dots {
+  display: flex;
+  gap: 10rpx;
+  margin-right: 10rpx;
+}
+
+.dot {
+  width: 18rpx;
+  height: 18rpx;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 50%;
+}
+
+/* 统计数据卡片 */
+.stats-card {
+  margin: 0 30rpx 20rpx;
+  background-color: #e5efd5;
+  border-radius: 20rpx;
+  display: flex;
+  align-items: center;
+  padding: 28rpx 0;
+}
+
+.stat-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 44rpx;
+  font-weight: bold;
+  color: #4a6a3a;
+}
+
+.stat-label {
+  font-size: 22rpx;
+  color: #6a8a5a;
+  margin-top: 6rpx;
+}
+
+.stat-divider {
+  width: 2rpx;
+  height: 50rpx;
+  background-color: #c5d4b5;
+}
+
+/* 功能模块区域 */
+.module-section {
+  margin: 0 30rpx;
+  background-color: #faf8f5;
+  border-radius: 24rpx;
+  padding: 28rpx;
+}
+
+/* 养护记录模块 */
+.care-module {
+  margin-bottom: 16rpx;
+}
+
+.module-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.module-title {
+  position: relative;
+  display: inline-block;
+}
+
+.module-title-text {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.module-underline {
+  width: 100%;
+  height: 4rpx;
+  background-color: #7a9a6a;
+  border-radius: 2rpx;
+  margin-top: 6rpx;
+}
+
+.arrow {
+  font-size: 28rpx;
+  color: #999;
+  font-weight: 500;
+}
+
+.care-list {
+  display: flex;
+  white-space: nowrap;
+}
+
+.care-item {
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 16rpx;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: inline-block;
+  margin-right: 16rpx;
+  background-color: #f5f5f5;
+}
+
+.care-item:last-child {
+  margin-right: 0;
+}
+
+.care-image {
+  width: 100%;
+  height: 100%;
+}
+
+.care-item.placeholder {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e8f0e0;
+}
+
+.placeholder-icon {
+  font-size: 48rpx;
+  color: #7a9a6a;
+  font-weight: bold;
+}
+
+/* 菜单列表 */
+.menu-list {
+  margin-top: 16rpx;
+  padding-top: 8rpx;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 0;
+  border-bottom: 1rpx solid #f0ece5;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-title {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-text {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.menu-text.danger {
+  color: #c9735a;
+}
+
+.menu-underline {
+  height: 4rpx;
+  margin-top: 4rpx;
+  border-radius: 2rpx;
+  width: 100%;
+}
+
+.menu-underline.green {
+  background-color: #7a9a6a;
+}
+
+.menu-underline.red {
+  background-color: #c9735a;
+}
+
+.menu-arrow {
+  font-size: 28rpx;
+  color: #999;
+  font-weight: 500;
+}
+
+.menu-arrow.danger {
+  color: #c9735a;
+}
+
+/* 底部TabBar */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 110rpx;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-bottom: env(safe-area-inset-bottom);
+  box-shadow: 0 -2rpx 16rpx rgba(0, 0, 0, 0.06);
+}
+
+.tab-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.tab-icon-wrapper {
+  width: 48rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2rpx solid #ccc;
+  border-radius: 8rpx;
+}
+
+.tab-icon-text {
+  font-size: 28rpx;
+  color: #999;
+  font-weight: 500;
+}
+
+.tab-icon-active {
+  width: 68rpx;
+  height: 68rpx;
+  background-color: #7a9a6a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-icon-text-active {
+  font-size: 28rpx;
+  color: #fff;
+  font-weight: 600;
+}

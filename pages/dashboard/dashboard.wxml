@@ -1,0 +1,4 @@
+<!-- pages/dashboard/dashboard.wxml -->
+<view class="container">
+  <text>仪表盘页面 - 测试</text>
+</view>

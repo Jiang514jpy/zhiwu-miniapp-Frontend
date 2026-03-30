@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/dashboard/dashboard",
+    "pages/register/register",
+    "pages/diary/index",
+    "pages/plant/index",
+    "pages/ai/ai",
+    "pages/user/user"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f0f7e6",
+    "navigationBarTitleText": "植物日记",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f0f7e6"
+  },
+  "_tabBar": {  
+    "color": "#999999",
+    "selectedColor": "#5a8f3e",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "images/tab-home.png",
+        "selectedIconPath": "images/tab-home-active.png"
+      },
+      {
+        "pagePath": "pages/diary/index",
+        "text": "日记",
+        "iconPath": "images/tab-plant.png",
+        "selectedIconPath": "images/tab-plant-active.png"
+      },
+      {
+        "pagePath": "pages/plant/index",
+        "text": "植物",
+        "iconPath": "images/tab-message.png",
+        "selectedIconPath": "images/tab-message-active.png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/tab-profile.png",
+        "selectedIconPath": "images/tab-profile-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2"
+}

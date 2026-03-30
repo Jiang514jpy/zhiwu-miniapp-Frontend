@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <!-- 盆栽1 -->
+  <rect x="20" y="50" width="30" height="25" rx="3" fill="#D4A574"/>
+  <ellipse cx="35" cy="50" rx="18" ry="5" fill="#C49A6C"/>
+  <path d="M35 50 Q25 35 30 20 Q35 30 35 50" fill="#7CB342"/>
+  <path d="M35 50 Q45 35 40 20 Q35 30 35 50" fill="#8BC34A"/>
+  <path d="M35 45 Q20 40 25 25 Q30 35 35 45" fill="#9CCC65"/>
+  
+  <!-- 盆栽2 -->
+  <rect x="85" y="45" width="35" height="30" rx="4" fill="#A1887F"/>
+  <ellipse cx="102" cy="45" rx="20" ry="6" fill="#8D6E63"/>
+  <path d="M102 45 L95 15 Q102 25 109 15 L102 45" fill="#66BB6A"/>
+  <path d="M102 40 Q85 30 90 10 Q95 25 102 40" fill="#81C784"/>
+  <path d="M102 40 Q119 30 114 10 Q109 25 102 40" fill="#A5D6A7"/>
+  
+  <!-- 盆栽3 -->
+  <rect x="150" y="55" width="25" height="20" rx="3" fill="#BCAAA4"/>
+  <ellipse cx="162" cy="55" rx="15" ry="4" fill="#A1887F"/>
+  <circle cx="155" cy="45" r="8" fill="#C8E6C9"/>
+  <circle cx="162" cy="40" r="10" fill="#A5D6A7"/>
+  <circle cx="170" cy="47" r="7" fill="#81C784"/>
+</svg>

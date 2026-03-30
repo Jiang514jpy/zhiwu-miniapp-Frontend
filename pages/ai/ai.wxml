@@ -1,0 +1,122 @@
+<!--pages/ai/ai.wxml-->
+<view class="chat-container">
+  <!-- 背景图片 -->
+  <view class="bg-wrapper">
+    <image class="chat-bg" src="/images/chat-bg.png" mode="widthFix"></image>
+  </view>
+  
+  <!-- 渐变背景底色 -->
+  <view class="bg-gradient"></view>
+  
+  <!-- 聊天内容区域 -->
+  <scroll-view 
+    class="chat-content" 
+    scroll-y="true" 
+    scroll-into-view="{{scrollToView}}"
+    scroll-with-animation="true"
+  >
+    <!-- 顶部占位，避免遮挡背景图标题 -->
+    <view class="header-placeholder"></view>
+    
+    <!-- 消息列表 -->
+    <view class="message-list">
+      <block wx:for="{{messages}}" wx:key="id">
+        <!-- AI消息 -->
+        <view wx:if="{{item.type === 'ai'}}" class="message-item ai-message" id="msg-{{item.id}}">
+          <view class="message-bubble ai-bubble">
+            <text class="message-text">{{item.content}}</text>
+          </view>
+        </view>
+        
+        <!-- 用户文字消息 -->
+        <view wx:if="{{item.type === 'user'}}" class="message-item user-message" id="msg-{{item.id}}">
+          <view class="message-bubble user-bubble">
+            <text class="message-text">{{item.content}}</text>
+          </view>
+          <image class="user-avatar" src="/images/user-avatar.png" mode="aspectFill"></image>
+        </view>
+
+        <!-- 用户图片消息 -->
+        <view wx:if="{{item.type === 'user-image'}}" class="message-item user-message" id="msg-{{item.id}}">
+          <view class="image-bubble">
+            <image class="chat-image" src="{{item.imagePath}}" mode="widthFix" bindtap="previewImage" data-src="{{item.imagePath}}"></image>
+          </view>
+          <image class="user-avatar" src="/images/user-avatar.png" mode="aspectFill"></image>
+        </view>
+        
+        <!-- AI详细回复卡片 -->
+        <view wx:if="{{item.type === 'ai-detail'}}" class="message-item ai-detail-message" id="msg-{{item.id}}">
+          <view class="detail-card">
+            <view class="detail-intro">{{item.intro}}</view>
+            <view class="detail-list">
+              <view wx:for="{{item.points}}" wx:for-item="point" wx:key="index" class="detail-point">
+                <text class="point-bullet">•</text>
+                <text class="point-text">{{point}}</text>
+              </view>
+            </view>
+            <view wx:if="{{item.tip}}" class="detail-tip">{{item.tip}}</view>
+          </view>
+        </view>
+      </block>
+      
+      <!-- 加载中提示 -->
+      <view wx:if="{{isLoading}}" class="loading-container">
+        <view class="loading-dots">
+          <view class="dot"></view>
+          <view class="dot"></view>
+          <view class="dot"></view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 底部占位 -->
+    <view class="scroll-bottom-placeholder"></view>
+  </scroll-view>
+  
+  <!-- 底部输入区域 -->
+  <view class="input-area">
+    <view class="input-wrapper">
+      <input 
+        class="chat-input" 
+        type="text" 
+        placeholder="请输入您的问题..." 
+        placeholder-class="input-placeholder"
+        value="{{inputValue}}"
+        bindinput="onInputChange"
+        bindconfirm="sendMessage"
+        confirm-type="send"
+        adjust-position="{{true}}"
+      />
+      <view class="send-btn" bindtap="toggleUploadPanel">
+        <text class="send-icon">+</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 上传面板遮罩 -->
+  <view class="upload-mask {{showUploadPanel ? 'show' : ''}}" bindtap="hideUploadPanel"></view>
+
+  <!-- 底部上传面板 -->
+  <view class="upload-panel {{showUploadPanel ? 'show' : ''}}">
+    <!-- 关闭按钮 -->
+    <view class="panel-close-btn" bindtap="hideUploadPanel">
+      <text class="close-icon">×</text>
+    </view>
+    
+    <!-- 上传选项 -->
+    <view class="upload-options">
+      <view class="upload-option" bindtap="takePhoto">
+        <view class="option-icon camera-icon">
+          <text class="icon-text">📷</text>
+        </view>
+        <text class="option-label">拍照</text>
+      </view>
+      <view class="upload-option" bindtap="chooseImage">
+        <view class="option-icon album-icon">
+          <text class="icon-text">🖼</text>
+        </view>
+        <text class="option-label">图片</text>
+      </view>
+    </view>
+  </view>
+</view>

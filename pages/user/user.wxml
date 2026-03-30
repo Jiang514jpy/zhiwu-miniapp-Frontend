@@ -1,0 +1,132 @@
+<!--pages/user/user.wxml-->
+<view class="user-container">
+  <!-- 顶部标题区域 -->
+  <view class="header-section">
+    <view class="title-row">
+      <view class="title-wrapper">
+        <text class="title-cn">我的</text>
+        <text class="title-en">Profile</text>
+        <view class="title-underline"></view>
+      </view>
+      <!-- 右上角盆栽装饰 -->
+      <image class="header-plants" src="/images/header-plants.png" mode="heightFix"></image>
+    </view>
+  </view>
+
+  <!-- 用户信息卡片 -->
+  <view class="user-card">
+    <view class="user-card-content">
+      <view class="avatar-wrapper">
+        <image class="avatar" src="/images/user-avatar.png" mode="aspectFit"></image>
+      </view>
+      <view class="user-info">
+        <text class="username">{{userInfo.nickname}}</text>
+        <text class="user-id">ID：{{userInfo.id}}</text>
+      </view>
+      <view class="card-dots">
+        <view class="dot"></view>
+        <view class="dot"></view>
+        <view class="dot"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 统计数据卡片 -->
+  <view class="stats-card">
+    <view class="stat-item" bindtap="goToMyPlants">
+      <text class="stat-number">{{stats.plantCount}}</text>
+      <text class="stat-label">我的植物</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item" bindtap="goToCareRecords">
+      <text class="stat-number">{{stats.careRecords}}</text>
+      <text class="stat-label">养护记录</text>
+    </view>
+    <view class="stat-divider"></view>
+    <view class="stat-item">
+      <text class="stat-number">{{stats.careDays}}</text>
+      <text class="stat-label">养护天数</text>
+    </view>
+  </view>
+
+  <!-- 功能模块区域 -->
+  <view class="module-section">
+    <!-- 养护记录模块 -->
+    <view class="care-module">
+      <view class="module-header" bindtap="goToCareRecords">
+        <view class="module-title">
+          <text class="module-title-text">养护记录</text>
+          <view class="module-underline"></view>
+        </view>
+        <text class="arrow">></text>
+      </view>
+      <scroll-view class="care-list" scroll-x="true" enable-flex="true">
+        <block wx:if="{{careRecords.length > 0}}">
+          <view class="care-item" wx:for="{{careRecords}}" wx:key="id" bindtap="goToCareDetail" data-id="{{item.id}}">
+            <image class="care-image" src="{{item.image}}" mode="aspectFill"></image>
+          </view>
+        </block>
+        <block wx:else>
+          <view class="care-item placeholder">
+            <view class="placeholder-icon">1</view>
+          </view>
+          <view class="care-item placeholder">
+            <view class="placeholder-icon">2</view>
+          </view>
+          <view class="care-item placeholder">
+            <view class="placeholder-icon">3</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+
+    <!-- 菜单列表 -->
+    <view class="menu-list">
+      <view class="menu-item" bindtap="goToProfile">
+        <view class="menu-title">
+          <text class="menu-text">个人资料</text>
+          <view class="menu-underline green"></view>
+        </view>
+        <text class="menu-arrow">></text>
+      </view>
+      <view class="menu-item" bindtap="goToChangePassword">
+        <view class="menu-title">
+          <text class="menu-text">更改密码</text>
+          <view class="menu-underline green"></view>
+        </view>
+        <text class="menu-arrow">></text>
+      </view>
+      <view class="menu-item" bindtap="deleteAccount">
+        <view class="menu-title">
+          <text class="menu-text danger">删除账号</text>
+          <view class="menu-underline red"></view>
+        </view>
+        <text class="menu-arrow danger">></text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部TabBar -->
+  <view class="tab-bar">
+    <view class="tab-item" bindtap="switchTab" data-path="/pages/index/index">
+      <view class="tab-icon-wrapper">
+        <text class="tab-icon-text">H</text>
+      </view>
+    </view>
+    <view class="tab-item" bindtap="switchTab" data-path="/pages/community/community">
+      <view class="tab-icon-wrapper">
+        <text class="tab-icon-text">C</text>
+      </view>
+    </view>
+    <view class="tab-item" bindtap="switchTab" data-path="/pages/care/care">
+      <view class="tab-icon-wrapper">
+        <text class="tab-icon-text">P</text>
+      </view>
+    </view>
+    <view class="tab-item active">
+      <view class="tab-icon-active">
+        <text class="tab-icon-text-active">U</text>
+      </view>
+    </view>
+  </view>
+</view>
